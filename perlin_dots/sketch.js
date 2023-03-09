@@ -10,7 +10,7 @@ function setup() {
   strokeWeight(0);
   fill(123, 123, 123);
   refreshSlider = createSlider(0, 10, 5, 1);
-  dotSizeSlider = createSlider(0, 10, 5, 1);
+  dotSizeSlider = createSlider(0, 50, 5, 1);
   noiseScaleSlider = createSlider(0, 200, 1, 5);
   speedSlider = createSlider(0, 0.5, 0.05, 0.01);
   colorPicker = createColorPicker();
@@ -34,7 +34,7 @@ function draw() {
   speed = speedSlider.value();
   refreshRate = refreshSlider.value();
   noiseScale = noiseScaleSlider.value();
-  background(34,24,51);
+
   for (let y=0; y<height; y++) {
     for (let x=0; x<width; x++) {
       if (x % refreshRate == 0 && y % refreshRate == 0) {
@@ -42,5 +42,6 @@ function draw() {
       }
     }
   }
+
   z += speed;
 }
